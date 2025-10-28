@@ -23,7 +23,7 @@ CREATE TABLE marks (
 );
 
 INSERT INTO students (name, lastname, birthday) VALUES
-('Ivan', 'Petrov', '2003-05-12'),
+('Ivan', 'Petrov', '2003-05-11'),
 ('Anna', 'Smirnova', '2004-01-23'),
 ('Dmitry', 'Sokolov', '2003-11-02'),
 ('Elena', 'Kuznetsova', '2004-07-15'),
