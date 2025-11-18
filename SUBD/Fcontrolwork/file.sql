@@ -1,3 +1,28 @@
+--Создание таблицы
+
+CREATE TABLE Cotroll_students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    age INT,
+    grade VARCHAR(10)
+);
+
+--заполнение
+
+SET SESSION max_recursive_iterations = 100000;
+INSERT INTO Cotroll_students (name, age, grade)
+WITH RECURSIVE numbers (n) AS (
+   SELECT 0
+   UNION ALL
+   SELECT n + 1 FROM numbers WHERE n < 99999
+)
+SELECT
+   CONCAT('Student', n),
+   FLOOR(RAND() * 100),  -- возраст от 0 до 99
+   FLOOR(RAND() * 10)    -- оценка от 0 до 9
+FROM numbers;
+
+
 -- Проверка без индекса 
 EXPLAIN SELECT * FROM students WHERE age = 25
 
